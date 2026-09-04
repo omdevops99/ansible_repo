@@ -1,0 +1,6 @@
+--- 
+- name: configuring the server
+  become: true
+  hosts: managed_server
+  roles:
+     - nginx
