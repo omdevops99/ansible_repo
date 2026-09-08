@@ -4,3 +4,4 @@
   hosts: managed_server
   roles:
      - nginx
+     - webapp
