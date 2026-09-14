@@ -1,0 +1,23 @@
+---
+ - name: create new Aws instance_type
+   hosts: localhost
+   connection: local
+   tasks:
+      - name: create ec2 isntances
+        amazon.aws.ec2_instance:
+           name: "{{ item.name }}"
+           instance_type: "{{ instance_type }}"
+           image_id: "{{ item.image }}"
+           region: "{{ aws_region }}"
+           key_name: "{{ key_name }}"
+           security_group: "{{security_group }}"
+           subnet_id: "{{ subnet_id }}"
+           access_key: "{{ aws_access_key }}"
+           secret_key: "{{ aws_secret_key }}"
+        loop:
+          - name: "ubuntu-server"
+            image: "ami-0b6d9d3d33ba97d99" 
+          - name: "debian-server"
+            image: "ami-0b75f821522bcff85"
+          - name: "centos-server"
+            image: "ami-00adafae70b8029d8"
