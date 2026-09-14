@@ -1,0 +1,9 @@
+aws_region: us-east-1
+
+instance_type: t3.micro
+
+key_name: ansible_key
+
+security_group: ansible-lab-sg
+
+subnet_id: subnet-08327f6fc78076dd7
