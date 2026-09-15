@@ -1,0 +1,21 @@
+---
+ - name: error handling concept
+   become: true
+   gather_facts: false
+   tasks:
+     - name: check the whether the openssh & openssl are latest 
+       ansible.builtin.apt:
+          - name: "{{ item }}"
+            state: latest
+       loop:
+         - openssh
+         - openssl
+       ignore_error: yes
+     - name: check the docker exist or not 
+       ansible.builtin.command: docker --version
+       register: output
+     - name: print the output
+       ansible.builtin.debug:
+       var: output
+       
+            
