@@ -10,11 +10,11 @@
        loop:
          - openssh
          - openssl
-       ignore_error: yes
+       ignore_errors: yes
      - name: check the docker exist or not 
        ansible.builtin.command: docker --version
        register: output
      - name: print the output
        ansible.builtin.debug:
-       var: output
+         var: output
 
