@@ -1,6 +1,7 @@
 ---
  - name: error handling concept
    become: true
+   hosts: all
    gather_facts: false
    tasks:
      - name: check the whether the openssh & openssl are latest 
