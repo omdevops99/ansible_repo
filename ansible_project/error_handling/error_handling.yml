@@ -5,7 +5,7 @@
    tasks:
      - name: check the whether the openssh & openssl are latest 
        ansible.builtin.apt:
-          - name: "{{ item }}"
+            name: "{{ item }}"
             state: latest
        loop:
          - openssh
@@ -17,5 +17,4 @@
      - name: print the output
        ansible.builtin.debug:
        var: output
-       
-            
+
