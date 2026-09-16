@@ -8,6 +8,10 @@
          register: result
          ignore_errors: true
 
+       - name: print the output
+         ansible.builtin.debug: 
+            var: result
+
        - name:  print the registered value
          ansible.builtin.debug:
            msg: "play confinued despite of the failure"
