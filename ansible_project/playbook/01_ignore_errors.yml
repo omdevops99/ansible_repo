@@ -1,7 +1,7 @@
 --- 
  - name: error handling
    become: true
-   host: localhost
+   hosts: localhost
    tasks: 
        - name: this task will fail
          ansible.builtin.command: /bin/false
