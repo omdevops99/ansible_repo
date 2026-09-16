@@ -5,7 +5,19 @@
    tasks: 
        - name: this task will fail
          ansible.builtin.command: /bin/false
+         register: result
          ignore_errors: true
-       - name:  this still runs inspite of the failure
+
+       - name:  print the registered value
          debug: 
            msg: "play confinued despite of the failure"
+           var: result
+       - name: print the result got failed
+         debug:
+           msg: "detected a failure"
+           when: resul.failed
+
+       - name: print the result got succeded
+         ansible.builtin.debug:
+            msg: "succeded"
+            when: not resul.failed
