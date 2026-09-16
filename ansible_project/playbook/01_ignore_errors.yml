@@ -11,7 +11,7 @@
        - name:  print the registered value
          debug: 
            msg: "play confinued despite of the failure"
-           var: result
+         
        - name: print the result got failed
          debug:
            msg: "detected a failure"
