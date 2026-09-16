@@ -1,0 +1,11 @@
+--- 
+ - name: error handling
+   become: true
+   host: localhost
+   tasks: 
+       - name: this task will fail
+         ansible.builtin.command: /bin/false
+         ignore_errors: true
+       - name:  this still runs inspite of the failure
+         debug: 
+           msg: "play confinued despite of the failure"
