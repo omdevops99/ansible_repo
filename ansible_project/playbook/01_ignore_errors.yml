@@ -4,7 +4,7 @@
    hosts: localhost
    tasks: 
        - name: this task will fail
-         ansible.builtin.command: /bin/false
+         ansible.builtin.command: ls -lrt
          register: result
          ignore_errors: true
 
