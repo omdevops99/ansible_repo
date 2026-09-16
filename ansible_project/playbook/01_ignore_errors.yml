@@ -9,15 +9,15 @@
          ignore_errors: true
 
        - name:  print the registered value
-         debug: 
+         ansible.builtin.debug:
            msg: "play confinued despite of the failure"
          
        - name: print the result got failed
-         debug:
+         ansible.builtin.debug:
            msg: "detected a failure"
-         when: resul.failed
+         when: result.failed
 
        - name: print the result got succeded
          ansible.builtin.debug:
             msg: "succeded"
-         when: not resul.failed
+         when: not result.failed
