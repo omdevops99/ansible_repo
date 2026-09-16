@@ -15,9 +15,9 @@
        - name: print the result got failed
          debug:
            msg: "detected a failure"
-           when: resul.failed
+         when: resul.failed
 
        - name: print the result got succeded
          ansible.builtin.debug:
             msg: "succeded"
-            when: not resul.failed
+         when: not resul.failed
